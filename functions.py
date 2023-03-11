@@ -73,6 +73,7 @@ def get_operation(update, context):
     context.user_data.clear()
     return ConversationHandler.END
 
+
 # # Обрабатываем пол пользователя
 # def gender(update, _):
 #     # определяем пользователя
@@ -161,17 +162,17 @@ def get_operation(update, context):
 #     # Заканчиваем разговор.
 #     return ConversationHandler.END
 
-# # Обрабатываем команду /cancel если пользователь отменил разговор
-# def cancel(update, _):
-#     # определяем пользователя
-#     user = update.message.from_user
-#     # Пишем в журнал о том, что пользователь не разговорчивый
-#     logger.info("Пользователь %s отменил разговор.", user.first_name)
-#     # Отвечаем на отказ поговорить
-#     update.message.reply_text(
-#         'Мое дело предложить - Ваше отказаться'
-#         ' Будет скучно - пиши.',
-#         reply_markup=ReplyKeyboardRemove()
-#     )
-#     # Заканчиваем разговор.
-#     return ConversationHandler.END
+# Обрабатываем команду /cancel если пользователь отменил разговор
+def cancel(update, _):
+    # определяем пользователя
+    user = update.message.from_user
+    # Пишем в журнал о том, что пользователь не разговорчивый
+    logger.info("Пользователь %s отменил разговор.", user.first_name)
+    # Отвечаем на отказ поговорить
+    update.message.reply_text(
+        'Мое дело предложить - Ваше отказаться'
+        ' Будет скучно - пиши.',
+        reply_markup=ReplyKeyboardRemove()
+    )
+    # Заканчиваем разговор.
+    return ConversationHandler.END
