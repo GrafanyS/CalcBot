@@ -1,5 +1,9 @@
 # C a l c B o t
 
+Это учебный проект
+
+не судите строго
+
 ```python
 from functions import *
 from config import TOKEN
